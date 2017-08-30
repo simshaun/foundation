@@ -33,9 +33,6 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -63,55 +60,89 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 82);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports) {
 
 module.exports = jQuery;
 
 /***/ }),
-
-/***/ 1:
+/* 1 */
 /***/ (function(module, exports) {
 
 module.exports = {Foundation: window.Foundation};
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
 
-/***/ 16:
+module.exports = {Plugin: window.Foundation.Plugin};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = {rtl: window.Foundation.rtl, GetYoDigits: window.Foundation.GetYoDigits, transitionend: window.Foundation.transitionend};
+
+/***/ }),
+/* 4 */,
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = {Keyboard: window.Foundation.Keyboard};
+
+/***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = {Box: window.Foundation.Box};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = {Nest: window.Foundation.Nest};
+
+/***/ }),
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(23);
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__foundation_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__foundation_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__foundation_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation_drilldown__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation_drilldown__ = __webpack_require__(24);
 
 
 
 __WEBPACK_IMPORTED_MODULE_0__foundation_core__["Foundation"].plugin(__WEBPACK_IMPORTED_MODULE_1__foundation_drilldown__["a" /* Drilldown */], 'Drilldown');
 
 /***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = {Plugin: window.Foundation.Plugin};
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports) {
-
-module.exports = {rtl: window.Foundation.rtl, GetYoDigits: window.Foundation.GetYoDigits, transitionend: window.Foundation.transitionend};
-
-/***/ }),
-
-/***/ 46:
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -213,7 +244,7 @@ var Drilldown = function (_Plugin) {
       this.$submenuAnchors = this.$element.find('li.is-drilldown-submenu-parent').children('a');
       this.$submenus = this.$submenuAnchors.parent('li').children('[data-submenu]').attr('role', 'group');
       this.$menuItems = this.$element.find('li').not('.js-drilldown-back').attr('role', 'treeitem').find('a');
-      this.$element.attr('data-mutate', this.$element.attr('data-drilldown') || __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["GetYoDigits"])(6, 'drilldown'));
+      this.$element.attr('data-mutate', this.$element.attr('data-drilldown') || Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["GetYoDigits"])(6, 'drilldown'));
 
       this._prepareMenu();
       this._registerEvents();
@@ -393,7 +424,7 @@ var Drilldown = function (_Plugin) {
           next: function () {
             if ($element.is(_this.$submenuAnchors)) {
               _this._show($element.parent('li'));
-              $element.parent('li').one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
+              $element.parent('li').one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
                 $element.parent('li').find('ul li a').filter(_this.$menuItems).first().focus();
               });
               return true;
@@ -401,7 +432,7 @@ var Drilldown = function (_Plugin) {
           },
           previous: function () {
             _this._hide($element.parent('li').parent('ul'));
-            $element.parent('li').parent('ul').one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
+            $element.parent('li').parent('ul').one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
               setTimeout(function () {
                 $element.parent('li').parent('ul').parent('li').children('a').first().focus();
               }, 1);
@@ -429,7 +460,7 @@ var Drilldown = function (_Plugin) {
             if (!$element.is(_this.$menuItems)) {
               // not menu item means back button
               _this._hide($element.parent('li').parent('ul'));
-              $element.parent('li').parent('ul').one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
+              $element.parent('li').parent('ul').one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
                 setTimeout(function () {
                   $element.parent('li').parent('ul').parent('li').children('a').first().focus();
                 }, 1);
@@ -437,7 +468,7 @@ var Drilldown = function (_Plugin) {
               return true;
             } else if ($element.is(_this.$submenuAnchors)) {
               _this._show($element.parent('li'));
-              $element.parent('li').one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
+              $element.parent('li').one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($element), function () {
                 $element.parent('li').find('ul li a').filter(_this.$menuItems).first().focus();
               });
               return true;
@@ -464,7 +495,7 @@ var Drilldown = function (_Plugin) {
     value: function _hideAll() {
       var $elem = this.$element.find('.is-drilldown-submenu.is-active').addClass('is-closing');
       if (this.options.autoHeight) this.$wrapper.css({ height: $elem.parent().closest('ul').data('calcHeight') });
-      $elem.one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($elem), function (e) {
+      $elem.one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($elem), function (e) {
         $elem.removeClass('is-active is-closing');
       });
       /**
@@ -551,7 +582,7 @@ var Drilldown = function (_Plugin) {
       var _this = this;
       $elem.parent('li').attr('aria-expanded', false);
       $elem.attr('aria-hidden', true).addClass('is-closing');
-      $elem.addClass('is-closing').one(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($elem), function () {
+      $elem.addClass('is-closing').one(Object(__WEBPACK_IMPORTED_MODULE_3__foundation_util_core__["transitionend"])($elem), function () {
         $elem.removeClass('is-active is-closing');
         $elem.blur().addClass('invisible');
       });
@@ -725,35 +756,5 @@ Drilldown.defaults = {
 
 
 
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports) {
-
-module.exports = {Keyboard: window.Foundation.Keyboard};
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports) {
-
-module.exports = {Box: window.Foundation.Box};
-
-/***/ }),
-
-/***/ 82:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(16);
-
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports) {
-
-module.exports = {Nest: window.Foundation.Nest};
-
 /***/ })
-
-/******/ });
+/******/ ]);
